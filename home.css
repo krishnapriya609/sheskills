@@ -1,0 +1,64 @@
+body{
+font-family:Arial;
+margin:0;
+background:#fff0f5;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#ff4da6;
+color:white;
+}
+
+nav a{
+margin:0 10px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+.hero{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(135deg,#ff4da6,#ff99cc);
+color:white;
+}
+
+.hero button{
+padding:12px 30px;
+border:none;
+background:white;
+color:#ff4da6;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.about{
+padding:40px;
+text-align:center;
+}
+
+.stories{
+padding:40px;
+background:#ffe6f0;
+}
+
+.story-card{
+background:white;
+padding:20px;
+margin:20px auto;
+width:70%;
+border-radius:8px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+footer{
+text-align:center;
+padding:15px;
+background:#ff4da6;
+color:white;
+}

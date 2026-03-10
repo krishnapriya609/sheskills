@@ -1,0 +1,18 @@
+#results {
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff5f8;
+    border-left: 5px solid #ff4d6d;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.notfound {
+    color: #ff2a50;
+    font-weight: bold;
+    text-align: center;
+}

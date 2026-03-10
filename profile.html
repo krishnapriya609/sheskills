@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SheSkills Profile</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f9f9; margin:0; padding:0; }
+        header { background:#d80b78; color:#fff; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; }
+        header nav a { color:#fff; margin-left:20px; text-decoration:none; font-weight:bold; }
+        header nav a:hover { color:#ffe6ef; }
+
+        #profileSection { width:90%; max-width:700px; margin:30px auto; padding:25px 30px; background:#fff; border-radius:8px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+        #profileSection h2 { text-align:center; color:#ff4d8e; margin-bottom:20px; }
+        .profile-card { background:#fff5f8; border-left:5px solid #ff4da3; padding:15px 20px; margin-bottom:20px; border-radius:5px; }
+        .profile-card h3 { color:#ff4daf; margin-bottom:10px; }
+        .profile-card p { font-size:15px; margin:5px 0; color:#555; }
+        .profile-card hr { border:none; border-top:1px solid #ffccd8; margin-top:10px; }
+        .no-skills { text-align:center; font-weight:bold; color:#ff2ab4; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SheSkills</h1>
+    <nav>
+        <a href="dashboard.html">Home</a>
+        <a href="#">Logout</a>
+    </nav>
+</header>
+
+<section id="profileSection">
+    <h2>Your Profile</h2>
+    <div id="profileDetails"></div>
+</section>
+
+<script>
+const allSkills = JSON.parse(localStorage.getItem("profileData")) || [];
+const profileDiv = document.getElementById("profileDetails");
+
+if(allSkills.length > 0){
+    allSkills.forEach(skill => {
+        const card = document.createElement("div");
+        card.className = "profile-card";
+        card.innerHTML = `
+            <h3>${skill.name}</h3>
+            <p><b>Skill:</b> ${skill.skill}</p>
+            <p><b>Category:</b> ${skill.category}</p>
+            <p><b>Qualification:</b> ${skill.qualification}</p>
+            <p><b>Experience:</b> ${skill.experience}</p>
+            <p><b>Location:</b> ${skill.location}</p>
+            <p><b>Qualification Document:</b> ${skill.documentName}</p>
+            ${skill.videoName ? `<p><b>Teaching Video:</b> ${skill.videoName}</p>` : ''}
+            <hr>`;
+        profileDiv.appendChild(card);
+    });
+}else{
+    profileDiv.innerHTML = "<p class='no-skills'>No skills submitted yet. Go to Dashboard and submit a skill!</p>";
+}
+</script>
+
+</body>
+</html>
